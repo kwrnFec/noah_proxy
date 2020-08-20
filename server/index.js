@@ -1,5 +1,5 @@
 const express = require("express");
-const proxy = require('express-http-proxy');
+const { createProxyMiddleware } = require('http-proxy-middleware');
 const cors = require('cors');
 const axios = require("axios");
 const apiUrl = 'http://52.26.193.201:3000/';
@@ -10,40 +10,7 @@ let app = express();
 
 app.use(express.static('public'));
 
-app.use(express.json());
-
-// should fix CORS
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-});
-
-app.get('/qa/*', (req, res) => {
-  let url = qaUrl + req.path;
-  axios.get(url, { params: req.query })
-    .then((response) => {
-      res.send(response.data);
-    })
-    .catch((err) => {
-      console.log('ProxyServer: ', err);
-    })
-});
-
-app.post('/qa/*', (req, res) => {
-  let url = qaUrl + req.path;
-  axios.post(url, req.body)
-    .then((response) => {
-      res.send(response.data);
-    })
-});
-
-app.put('/qa/*', (req, res) => {
-  let url = qaUrl + req.path;
-  axios.put(url, req.body)
-    .then((response) => {
-      res.send(response.data);
-    })
-});
+app.use('/qa', createProxyMiddleware({ target: qaUrl, changeOrigin: true }));
 
 const port = 3000;
 
