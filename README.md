@@ -1,6 +1,6 @@
 # Project Name
 
-> Project description
+> Proxy Server for Project Greenfield for team KWRN.
 
 ## Related Projects
 
@@ -17,7 +17,7 @@
 
 ## Usage
 
-> Some usage instructions
+> run npm start
 
 ## Requirements
 
@@ -33,7 +33,6 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 From within the root directory:
 
 ```sh
-npm install -g webpack
 npm install
 ```
 
