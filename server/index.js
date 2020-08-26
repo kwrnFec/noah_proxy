@@ -11,7 +11,7 @@ const rrUrl = 'http://ec2-54-172-55-163.compute-1.amazonaws.com';
 // overview
 const ovUrl = 'http://ec2-35-165-217-158.us-west-2.compute.amazonaws.com';
 // related products
-const rpUrl = 'http://ec2-3-12-148-239.us-east-2.compute.amazonaws.com';
+const rpUrl = 'http://ec2-3-16-47-222.us-east-2.compute.amazonaws.com';
 
 
 let app = express();
