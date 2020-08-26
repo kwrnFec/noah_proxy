@@ -18,6 +18,7 @@
 ## Usage
 
 > run npm start
+> then navigate to localhost:3000 in your browser
   - Note: This app will display a blank page if the instances
       of the related modules above are not running.
 
