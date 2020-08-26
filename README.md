@@ -18,6 +18,8 @@
 ## Usage
 
 > run npm start
+  - Note: This app will display a blank page if the instances
+      of the related modules above are not running.
 
 ## Requirements
 
